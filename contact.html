@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" rel="stylesheet">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/grid.css">
+   
+    
+
+    <title>Susil</title>
+</head>
+<header class="header">
+    <a href="#" class="header__logo">Susil</a>
+    <i name="menu-outline" class="fas fa-bars header__toggle" id="nav-toggle" ></i>
+    <nav class="nav" id="nav-menu">
+        <div class="nav__content bd-grid">
+            <i name="close-outline" class="fad fa-times nav__close" id="nav-close"></i>
+            <div class="nav__perfil">
+                <div class="nav__img">
+                    <img src="images/sushil.jpeg" alt="">
+                </div>
+                <div>
+                    <a href="#" class="nav__name"></a>
+                    <span class="nav__profesion">Web designer</span>
+                </div>
+            </div>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="about.html"  class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="Skills.html" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                        <li class="nav__item"><a href="contact.html" class="nav__link active">Contact me</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__social">
+                <a href="https://www.facebook.com/profile.php?id=100064324453392" class="nav__social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="nav__social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="nav__social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header> 
+<body>
+
+    <section id="contact" class="cb-pt-l cb-pb-l">
+        <div class="cb-container">
+            <div class="cb-row">
+                <div class="container">
+                    <div style="text-align:center">
+                      <h1>Contact Me</h1>
+                      <p>Leave me a message:</p>
+                    </div>
+                    <div class="row">
+                      <div class="column">
+                        <img src="images/susil_contact.jpg" alt="contact_me" style="  border-radius: 5%;"  />
+                      </div>
+                      <div class="column">
+                        <form method="post">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your first name...">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name...">
+                            <label for="country">Country</label>
+                            <select id="country" name="country">
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                                <option value="others">others</option>
+                            </select>
+                            <label for="subject">Message</label>
+                            <textarea id="message" name="message" placeholder="Your Message..." style="height:70px"></textarea>
+                            <input type="button" value="Submit" class="button" onclick="sendEmail()" />
+                        </form>
+                    </div>
+
+        </div>
+        </div>
+        </div>
+    </section>
+    <footer>
+        <section id="footer-bottom">
+            <div class="cb-container">
+                <div class="footer-bottom-txt">
+                    <small>copyright ©
+                        <script
+                            type="text/javascript">myDate = new Date(); myYear = myDate.getFullYear(); document.write(myYear);</script>
+                         All rights reserved Susil.
+                    </small>
+                </div>
+            </div>
+        </section>
+        </footer>
+
+        <script src="https://smtpjs.com/v3/smtp.js">
+
+    </script>
+</body> <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+
+</script>
+<script type="text/javascript">
+function sendEmail() {
+
+    var firstName = document.getElementById("fname").value;
+    var lastName = document.getElementById("lname").value;
+    var country = document.getElementById("country").value;
+    var subject = document.getElementById("message").value;
+
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "susil112.kc@gmail.com",
+        Password: "pcgkjgvrylwkxqlb",
+        To: 'susil112.kc@gmail.com',
+        From: "susil113.kc@gmail.com",
+        Subject: "Message from " + firstName + " " + lastName + " - " + country,      
+        Body: message,
+    })
+        .then(function (message) {
+            alert("Email sent successfully")
+        });
+}
+</script>
+</html>
